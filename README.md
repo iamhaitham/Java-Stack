@@ -1,2 +1,2 @@
 # Java-Stack
-AXSOS Academy Python Stack Assignments
+AXSOS Academy Java Stack Assignments
