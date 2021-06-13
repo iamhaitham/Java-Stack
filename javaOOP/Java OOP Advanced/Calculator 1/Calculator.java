@@ -1,4 +1,4 @@
-public class Calculator implements CalculatorInterface{
+public class Calculator implements java.io.Serializable{
     private double OperandOne;
     private String Operation;
     private double OperandTwo;
