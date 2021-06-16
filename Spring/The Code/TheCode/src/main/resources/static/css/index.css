@@ -1,0 +1,15 @@
+div, div>form{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	align-content:center;
+}
+
+button{
+	box-shadow:2px 2px solid black;
+}
+
+#errors{
+	color:red;
+}
