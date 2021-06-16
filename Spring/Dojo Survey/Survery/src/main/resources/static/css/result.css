@@ -1,0 +1,16 @@
+h2{
+	text-decoration:underline;
+}
+
+#borderedDiv{
+	border:2px solid black;
+	padding:15px;
+	margin-left:20%;
+	margin-top:20%;
+}
+
+.resultsInRow{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
