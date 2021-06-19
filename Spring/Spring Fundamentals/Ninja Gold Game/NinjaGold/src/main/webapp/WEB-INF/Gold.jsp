@@ -56,7 +56,7 @@
 	
 	<div id="activities">
 		<h1>Activites</h1>
-		<p><c:out value="${myText}"/></p>
+		<p><c:out value="${myText}" /></p>
 	</div>
 	
 	
