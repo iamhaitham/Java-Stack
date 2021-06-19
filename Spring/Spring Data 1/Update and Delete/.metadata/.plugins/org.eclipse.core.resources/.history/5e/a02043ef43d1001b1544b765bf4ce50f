@@ -1,0 +1,5 @@
+package com.codingdojo.mvc.services;
+
+public class BookService {
+
+}
