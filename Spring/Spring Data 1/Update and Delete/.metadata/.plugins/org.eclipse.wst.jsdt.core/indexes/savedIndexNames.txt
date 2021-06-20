@@ -1,3 +1,0 @@
-INDEX VERSION 1.4+C:\Users\USER\Desktop\MVC Exercise\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2885510462.index
-1297013223.index
