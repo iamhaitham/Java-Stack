@@ -26,6 +26,7 @@ public class BookInfo {
     	bookService.deleteBook(id);
     	return "redirect:/books/{id}";
     }
+    
 
 
 }
