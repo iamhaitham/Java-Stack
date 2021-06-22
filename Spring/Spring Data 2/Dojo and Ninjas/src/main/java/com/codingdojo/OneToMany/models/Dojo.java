@@ -76,12 +76,12 @@ public class Dojo {
 
 
 		@PrePersist
-		public void setCreatedAt(Date createdAt) {
+		public void setCreatedAt() {
 			this.createdAt = new Date();
 		}
 	    
 	    @PreUpdate
-		public void setUpdatedAt(Date updatedAt) {
+		public void setUpdatedAt() {
 			this.updatedAt = new Date();
 		}
 }

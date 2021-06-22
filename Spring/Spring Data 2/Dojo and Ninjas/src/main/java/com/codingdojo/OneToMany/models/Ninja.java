@@ -70,14 +70,14 @@ public class Ninja {
 		return createdAt;
 	}
 	@PrePersist
-	public void setCreatedAt(Date createdAt) {
+	public void setCreatedAt() {
 		this.createdAt = new Date();
 	}
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
 	@PreUpdate
-	public void setUpdatedAt(Date updatedAt) {
+	public void setUpdatedAt() {
 		this.updatedAt = new Date();
 	}
 
