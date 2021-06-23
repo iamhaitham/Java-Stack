@@ -1,0 +1,23 @@
+form{
+	display:flex;
+	flex-direction:column;
+}
+
+form>div{
+	display:flex;
+	flex-direction:row;
+	margin:2% 0%;
+}
+
+label{
+	margin-top:10px;
+}
+
+.inputs{
+	width:15%;
+	margin-left:2%;
+}
+
+#createButton{
+	width:5%;
+}

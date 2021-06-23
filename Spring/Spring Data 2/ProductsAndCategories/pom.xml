@@ -8,12 +8,12 @@
 		<version>2.5.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.codingdojo.ManytoMany</groupId>
-	<artifactId>ManytoMany</artifactId>
+	<groupId>com.codingdojo.ProductsAndCategories</groupId>
+	<artifactId>ProductsAndCategories</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>ManytoMany</name>
-	<description>Solving Many to Many Assignment</description>
+	<name>ProductsAndCategories</name>
+	<description>Solving Products And Categories Assignment</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -48,7 +48,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		   <dependency>
+		 <dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
@@ -56,10 +56,10 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
         </dependency>
-        <dependency>
+          <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-validation</artifactId>
-    </dependency>
+    </dependency>   
 	</dependencies>
 
 	<build>

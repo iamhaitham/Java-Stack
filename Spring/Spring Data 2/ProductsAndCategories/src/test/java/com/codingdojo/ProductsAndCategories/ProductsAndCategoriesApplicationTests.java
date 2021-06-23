@@ -1,10 +1,10 @@
-package com.codingdojo.ManytoMany;
+package com.codingdojo.ProductsAndCategories;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ManytoManyApplicationTests {
+class ProductsAndCategoriesApplicationTests {
 
 	@Test
 	void contextLoads() {
