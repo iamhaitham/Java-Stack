@@ -1,0 +1,102 @@
+q1)
+What query would you run to get all the countries that speak Slovene? 
+Your query should return the name of the country, language, and language percentage. 
+Your query should arrange the result by language percentage in descending order.
+
+************ SQL ************ 
+SELECT countries.name,languages.language,languages.percentage FROM countries
+INNER JOIN languages ON countries.id=languages.country_id
+WHERE languages.language="Slovene"
+ORDER BY languages.percentage DESC;
+************ JPQL ************ 
+SELECT cc.name,l.language,l.percentage FROM Country cc JOIN cc.languages l WHERE language LIKE ?1 ORDER BY l.percentage DESC
+_________________________________________________________________________________
+_________________________________________________________________________________
+q2)
+What query would you run to display the total number of cities for each country?
+Your query should return the name of the country and the total number of cities.
+Your query should arrange the result by the number of cities in descending order.
+
+************ SQL ************ 
+SELECT countries.name, COUNT(cities.name) FROM countries
+INNER JOIN cities ON countries.id=cities.country_id
+GROUP BY countries.name
+ORDER BY COUNT(cities.name) DESC;
+************ JPQL ************ 
+SELECT cc.name, COUNT(c.name) FROM Country cc JOIN cc.cities c GROUP BY cc.name ORDER BY COUNT(c.name) DESC
+_________________________________________________________________________________
+_________________________________________________________________________________
+q3)
+What query would you run to get all the cities in Mexico with a population of greater than 500,000?
+Your query should arrange the result by population in descending order.
+
+************ SQL ************ 
+SELECT cities.name,cities.population FROM cities
+INNER JOIN countries ON cities.country_id=countries.id
+WHERE countries.name="Mexico" AND cities.population>500000
+ORDER BY cities.population DESC;
+************ JPQL ************ 
+SELECT cc.name,c.name FROM Country cc JOIN cc.cities c WHERE cc.name LIKE ?1
+_________________________________________________________________________________
+_________________________________________________________________________________
+q4)
+What query would you run to get all languages in each country with a percentage greater than 89%?
+Your query should arrange the result by percentage in descending order.
+
+************ SQL ************ 
+SELECT countries.name, languages.language,languages.percentage FROM languages
+INNER JOIN countries ON languages.country_id=countries.id
+WHERE languages.percentage>89
+ORDER BY languages.percentage DESC;
+************ JPQL ************ 
+SELECT cc.name,l.language FROM Language l JOIN l.country cc WHERE l.percentage>89 ORDER BY l.percentage DESC
+_________________________________________________________________________________
+_________________________________________________________________________________
+q5)
+What query would you run to get all the countries with Surface Area below 501 and 
+Population greater than 100,000?
+
+************ SQL ************ 
+SELECT countries.name, countries.surface_area,countries.population FROM countries
+WHERE countries.surface_area<501 AND countries.population>100000;
+************ JPQL ************ 
+SELECT cc.name,cc.surface_area,cc.population FROM Country cc WHERE cc.surface_area<?1 AND cc.population>?2
+_________________________________________________________________________________
+_________________________________________________________________________________
+q6)
+What query would you run to get countries with only Constitutional Monarchy 
+with a surface area of more than 200 and a life expectancy greater than 75 years?
+
+************ SQL ************ 
+SELECT countries.name,countries.government_form,countries.life_expectancy,countries.surface_area FROM countries
+WHERE countries.surface_area>200 AND countries.life_expectancy>75 AND countries.government_form="Constitutional Monarchy";
+************ JPQL ************ 
+SELECT cc.name,cc.government_form,cc.surface_area,cc.life_expectancy FROM Country cc WHERE cc.government_form LIKE 'Constitutional Monarchy' AND cc.surface_area>200 AND cc.life_expectancy>75
+_________________________________________________________________________________
+_________________________________________________________________________________
+q7)
+What query would you run to get all the cities of Argentina inside the Buenos Aires district
+ and have the population greater than 500, 000? The query should return the Country Name, 
+City Name, District, and Population.
+
+************ SQL ************ 
+SELECT countries.name,cities.name,cities.district,cities.population FROM cities
+INNER JOIN countries ON cities.country_id=countries.id
+WHERE cities.district="Buenos Aires" AND countries.name="Argentina" AND cities.population>500000;
+************ JPQL ************ 
+SELECT cc.name,c.name,c.district,c.population FROM City c JOIN c.country cc WHERE cc.name='Argentina' AND c.district='Buenos Aires' AND c.population>1000
+_________________________________________________________________________________
+_________________________________________________________________________________
+q8)
+What query would you run to summarize the number of countries in each region? 
+The query should display the name of the region and the number of countries. 
+Also, the query should arrange the result by the number of countries in descending order.
+
+************ SQL ************ 
+SELECT countries.region,COUNT(countries.name) FROM countries
+GROUP BY countries.region
+ORDER BY COUNT(countries.name) DESC;
+************ JPQL ************ 
+SELECT cc.region,COUNT(cc.name) AS myCounter FROM Country cc GROUP BY cc.region ORDER BY myCounter DESC
+_________________________________________________________________________________
+_________________________________________________________________________________
