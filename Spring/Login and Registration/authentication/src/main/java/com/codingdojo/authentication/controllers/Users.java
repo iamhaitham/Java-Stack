@@ -14,12 +14,15 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.codingdojo.authentication.models.User;
 import com.codingdojo.authentication.services.UserService;
+import com.codingdojo.authentication.validator.UserValidator;
 
 @Controller
 public class Users {
     private final UserService userService;
-    public Users(UserService userService) {
+    private final UserValidator userValidator;
+    public Users(UserService userService,UserValidator userValidator) {
         this.userService = userService;
+        this.userValidator = userValidator;
     }
     
     @RequestMapping("/registration")
@@ -35,8 +38,9 @@ public class Users {
     public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
     	// if result has errors, return the registration page (don't worry about validations just now)
         // else, save the user in the database, save the user id in session, and redirect them to the /home route
+    	userValidator.validate(user, result);
     	if(result.hasErrors()) {
-    		return "redirect:/registration";
+    		return "registrationPage.jsp";
     	}else {
     		User newUser=userService.registerUser(user);
     		session.setAttribute("user_id",newUser.getId());
